@@ -5,6 +5,8 @@ from google import genai
 import time
 import io
 from markdown_pdf import MarkdownPdf, Section
+import markdown
+from htmldocx import HtmlToDocx
 
 
 def extract_docx_text(file):
@@ -202,8 +204,10 @@ def llm_strict_format(api_key, parsed_json):
 
 def text_to_docx(text: str):
     doc = Document()
-    for line in text.split("\n"):
-        doc.add_paragraph(line)
+    html_str = markdown.markdown(text)
+    new_parser = HtmlToDocx()
+    new_parser.add_html_to_document(html_str, doc)
+    
     buffer = io.BytesIO()
     doc.save(buffer)
     buffer.seek(0)

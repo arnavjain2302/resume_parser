@@ -3,3 +3,5 @@ pandas
 python-docx
 markdown-pdf
 google-genai
+markdown
+htmldocx
