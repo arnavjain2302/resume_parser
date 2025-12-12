@@ -19,16 +19,17 @@ st.sidebar.markdown(
 st.sidebar.header("📋 How to Use")
 st.sidebar.markdown(
     """
-    1. **API Key:** Enter your Google Gemini API key (required).
-    2. **Upload:** Upload your resume as a `.docx` file.
+    1. **Upload:** Upload your resume as a `.docx` file.
+    2. **API Key:** Enter your Google Gemini API key (required).
     3. **Select Sections:** Choose the sections (Education, Experience, etc.) 
        you want to include in the output schema.
     4. **Summarize:** Click 'Summarize' to start the extraction process.
-    5. **Download:** View the output as structured JSON or a polished 
-       Markdown resume, and download it as a DOCX or PDF file.
+    5. **View:** View the output as structured JSON or a polished 
+       Markdown resume.
+    6. **Download:** Download it as JSON, DOCX or PDF file.
     """
 )
-st.sidebar.info("Note: The base schema always includes Name, Email, and Phone.")
+st.sidebar.info("Note: The base response always includes Name, Email, and Phone.")
 
 st.write("---")
 
