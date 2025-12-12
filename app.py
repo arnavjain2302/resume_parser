@@ -1,7 +1,7 @@
 import streamlit as st
 import json
 import pandas as pd
-from parser import parse_resume, merge_schemas, SCHEMA, llm_strict_format, text_to_docx, text_to_pdf, AVAILABLE_ATTRIBUTES  # ← IMPORT from parser.py
+from parser import *
 
 st.title("📄 AI Resume Parser")
 
