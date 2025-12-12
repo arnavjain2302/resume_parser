@@ -30,49 +30,55 @@ SCHEMA = {
   "name": "",
   "email": "",
   "phone": "",
-  
-  "education": [
-    {
-      "degree": "",
-      "institution": "",
-      "start_date": "",
-      "end_date": "",
-      "cgpa/percentage": ""
-    }
-  ],
-  
-  "experience": [
-    {
-      "job_title": "",
-      "company": "",
-      "location": "",
-      "start_date": "",
-      "end_date": "",
-      "description": ""
-    }
-  ],
-  
-  "projects": [
-    {
-      "name": "",
-      "supervisor": "",
-      "location": " ",
-      "description": ""
-    }
-  ],
-  "skills": [],
-  "publications": [
-      {
-          "name": "",
-          "conference": "",
-          "first author": "",
-          "second author(s)": "",
-      }
-  ]
-
 }
 
-OPTIONAL_ATTRIBUTES = {
+AVAILABLE_ATTRIBUTES = {
+    "education": {
+        "education": [
+            {
+                "degree": "",
+                "institution": "",
+                "start_date": "",
+                "end_date": "",
+                "cgpa/percentage": ""
+            }
+        ]
+    },
+    "experience": {
+        "experience": [
+            {
+                "job_title": "",
+                "company": "",
+                "location": "",
+                "start_date": "",
+                "end_date": "",
+                "description": ""
+            }
+        ]
+    },
+    "projects": {
+        "projects": [
+            {
+                "name": "",
+                "supervisor": "",
+                "location": " ",
+                "description": ""
+            }
+        ]
+    },
+    "skills": {
+        "skills": []
+    },
+    "publications": {
+        "publications": [
+            {
+                "name": "",
+                "conference": "",
+                "first author": "",
+                "second author(s)": "",
+            }
+        ]
+    },
     "patents": {
         "patents": [
             {
@@ -105,12 +111,12 @@ OPTIONAL_ATTRIBUTES = {
     }
 }
 
-def merge_schemas(base_schema: dict, extras_keys: list) -> dict:
+def merge_schemas(base_schema: dict, selected_extras: list) -> dict:
     
     import copy
     final = copy.deepcopy(base_schema)
-    for k in extras_keys:
-        tmpl = OPTIONAL_ATTRIBUTES.get(k)
+    for k in selected_extras:
+        tmpl = AVAILABLE_ATTRIBUTES.get(k)
         if not tmpl:
             continue
         for key, val in tmpl.items():
