@@ -30,8 +30,6 @@ st.sidebar.markdown(
 )
 st.sidebar.info("Note: The base schema always includes Name, Email, and Phone.")
 
-st.write("---") 
-
 st.write("---")
 
 col_check, col_content = st.columns([1, 2])
