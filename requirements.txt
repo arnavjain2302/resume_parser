@@ -1,5 +1,5 @@
 streamlit
 pandas
 python-docx
-fpdf
+markdown-pdf
 google-genai
