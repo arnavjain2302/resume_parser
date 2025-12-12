@@ -8,11 +8,6 @@ st.title("📄 AI Resume Parser")
 uploaded_file = st.file_uploader("Upload .docx", type=["docx"] , key="resume_file_uploader")
 api_key = st.text_input("Enter your Gemini API key", type="password" , key = "api_key")
 
-st.title("📄 AI Resume Parser")
-
-uploaded_file = st.file_uploader("Upload .docx", type=["docx"])
-api_key = st.text_input("Enter your Gemini API key", type="password")
-
 st.sidebar.header("🚀 Project Description")
 st.sidebar.markdown(
     """
