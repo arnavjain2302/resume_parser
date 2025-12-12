@@ -1,10 +1,10 @@
 from docx import Document
-from fpdf import FPDF
 import json
 import re
 from google import genai
 import time
 import io
+from markdown_pdf import MarkdownPdf, Section
 
 
 def extract_docx_text(file):
@@ -211,15 +211,11 @@ def text_to_docx(text: str):
 
 
 def text_to_pdf(text: str):
-    pdf = FPDF()
-    pdf.add_page()
-    pdf.set_auto_page_break(auto=True, margin=15)
-    pdf.set_font("Arial", size=12)
-
-    for line in text.split("\n"):
-        pdf.multi_cell(0, 10, line)
-
+    pdf = MarkdownPdf()
+    pdf.add_section(Section(text))
+    
     buffer = io.BytesIO()
-    pdf.output(buffer)
+    pdf.save_bytes(buffer)
     buffer.seek(0)
     return buffer
+
