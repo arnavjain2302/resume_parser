@@ -216,7 +216,7 @@ def text_to_docx(text: str):
 
 def text_to_pdf(text: str):
     pdf = MarkdownPdf()
-    pdf.add_section(Section(text))
+    pdf.add_sectin(Section(text))
     
     buffer = io.BytesIO()
     pdf.save_bytes(buffer)
