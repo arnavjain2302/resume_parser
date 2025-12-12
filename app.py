@@ -76,7 +76,7 @@ if "parsed" in st.session_state:
             st.download_button(
                 "Download as DOCX",
                 data=docx_buffer,
-                file_name="resume.docx",
+                file_name="formatted_resume.docx",
                 mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document"
             )
             
@@ -84,6 +84,7 @@ if "parsed" in st.session_state:
             st.download_button(
                 "Download as PDF",
                 data=pdf_buffer,
-                file_name="resume.pdf",
+                file_name="formatted_resume.pdf",
                 mime="application/pdf"
             )
+
