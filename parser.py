@@ -169,7 +169,7 @@ def parse_resume(file, api_key, schema_1):
     time.sleep(1)
 
     response = client.models.generate_content(
-        model="gemini-2.5-flash-lite",
+        model="gemini-2.5-flash",
         contents=prompt
     )
 
@@ -201,7 +201,7 @@ def llm_strict_format(api_key, parsed_json):
     time.sleep(1)
 
     resp = client.models.generate_content(
-        model="gemini-2.5-flash-lite",
+        model="gemini-2.5-flash",
         contents=prompt
     )
     text = resp.text if hasattr(resp, "text") else str(resp)
